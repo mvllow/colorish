@@ -1,10 +1,10 @@
 {
-	"name": "node-esm-with-typescript",
+	"name": "colorish",
 	"version": "0.0.0",
-	"description": "Package template for using node esm with typescript",
+	"description": "Normalize color hex values",
 	"license": "MIT",
-	"repository": "mvllow/node-esm-with-typescript",
-	"funding": "https://github.com/mvllow/node-esm-with-typescript?sponsor=1",
+	"repository": "mvllow/colorish",
+	"funding": "https://github.com/mvllow/colorish?sponsor=1",
 	"author": {
 		"name": "mvllow",
 		"email": "mvllow@icloud.com"
@@ -25,10 +25,11 @@
 		"dist/source"
 	],
 	"types": "dist/source",
-	"keywords": [],
-	"dependencies": {
-		"meow": "^10.0.1"
-	},
+	"keywords": [
+		"color",
+		"hex",
+		"object"
+	],
 	"devDependencies": {
 		"@types/node": "^15.12.2",
 		"ava": "^3.15.0",
