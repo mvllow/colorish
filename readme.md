@@ -19,4 +19,4 @@ let mutedColors = colorish(colors, 0.5)
 // mutedColors.purple = '#5e53b980'
 ```
 
-Learn more about what colorish can do [here](https://github.com/mvllow/colorish/blob/test/index.ts)
+Learn more about what colorish can do [here](https://github.com/mvllow/colorish/blob/main/test/index.ts)
