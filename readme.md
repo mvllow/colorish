@@ -1,8 +1,6 @@
 # colorish
 
-> Normalize color hex values
-
-Useful when working with color objects, such as in CSS in JS or [pinecone](https://github.com/mvllow/pinecone)
+> Objectify alpha hex values
 
 ## Usage
 
@@ -10,13 +8,17 @@ Useful when working with color objects, such as in CSS in JS or [pinecone](https
 import colorish from 'colorish'
 
 let colors = {
-	purple: '#5e53b9',
-	orange: '#ed856c',
-	green: '#55b79c',
+	iris: '#c4a7e7',
+	gold: '#f6c177',
+	pine: '#31748f',
 }
 
 let mutedColors = colorish(colors, 0.5)
-// mutedColors.purple = '#5e53b980'
+// => { iris: '#c4a7e780', gold: '#f6c17780', pine: '#31748f80' }
 ```
 
-Learn more about what colorish can do [here](https://github.com/mvllow/colorish/blob/main/test/index.ts)
+Learn more about what colorish can do [here](https://github.com/mvllow/colorish/blob/main/test/main.ts)
+
+## Related
+
+- [pinecone](https://github.com/mvllow/pinecone)
