@@ -42,19 +42,21 @@ function colorish(
 
 	let hex = color.replace(/^#/, '')
 
+	if (hex.length !== 3 && hex.length !== 6 && hex.length !== 8) {
+		throw new TypeError('Expected valid hex length')
+	}
+
 	if (hex.length === 3) {
 		hex = `${hex.charAt(0)}${hex.charAt(0)}${hex.charAt(1)}${hex.charAt(
 			1
 		)}${hex.charAt(2)}${hex.charAt(2)}`
 	}
 
-	if (hex.length !== 6) {
-		throw new TypeError('Expected valid hex length')
+	if (hex.length === 8) {
+		return hook ? hook(`#${hex}`) : `#${hex}`
 	}
 
-	const result = `#${hex}${hexAlpha}`
-
-	return hook ? hook(result) : result
+	return hook ? hook(`#${hex}${hexAlpha}`) : `#${hex}${hexAlpha}`
 }
 
 export {colorish}
