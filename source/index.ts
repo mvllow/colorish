@@ -13,13 +13,17 @@ function alphaToHex(alpha: number) {
 	return hex
 }
 
-function colorish(color: string | Record<string, any>, alpha: number) {
+function colorish(
+	color: string | Record<string, any>,
+	alpha: number,
+	hook?: (arg0: string) => string
+) {
 	if (typeof color === 'object') {
 		const colors = {}
 
 		for (const key in color) {
 			if (typeof color[key] !== 'undefined') {
-				Object.assign(colors, {[key]: colorish(color[key], alpha)})
+				Object.assign(colors, {[key]: colorish(color[key], alpha, hook)})
 			}
 		}
 
@@ -48,7 +52,9 @@ function colorish(color: string | Record<string, any>, alpha: number) {
 		throw new TypeError('Expected valid hex length')
 	}
 
-	return `#${hex}${hexAlpha}`
+	const result = `#${hex}${hexAlpha}`
+
+	return hook ? hook(result) : result
 }
 
 export {colorish}
