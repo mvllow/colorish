@@ -1,6 +1,6 @@
 {
 	"name": "colorish",
-	"version": "0.1.4",
+	"version": "0.2.0",
 	"description": "Objectify alpha hex values",
 	"license": "MIT",
 	"repository": "mvllow/colorish",
