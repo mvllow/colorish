@@ -1,3 +1,4 @@
+// Thanks to @sindresorhus for hex logic (hex-rgb)[https://github.com/sindresorhus/hex-rgb]
 const hexCharacters = 'a-f\\d'
 const match3or4Hex = `#?[${hexCharacters}]{3}[${hexCharacters}]?`
 const match6or8Hex = `#?[${hexCharacters}]{6}([${hexCharacters}]{2})?`
@@ -12,17 +13,13 @@ function alphaToHex(alpha: number) {
 	return hex
 }
 
-function colorish(color: string | Record<string, string>, alpha: number) {
+function colorish(color: string | Record<string, any>, alpha: number) {
 	if (typeof color === 'object') {
 		const colors = {}
 
 		for (const key in color) {
-			if (color[key] !== 'undefined') {
-				if (typeof color[key] === 'object') {
-					throw new TypeError('Nested objects are not supported')
-				}
-
-				Object.assign(colors, {[key]: colorish(color[key] ?? '', alpha)})
+			if (typeof color[key] !== 'undefined') {
+				Object.assign(colors, {[key]: colorish(color[key], alpha)})
 			}
 		}
 
